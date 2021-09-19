@@ -1,0 +1,332 @@
+            * {
+                /*The selector * is used for reset a document */
+                /*but it is also used to control all page elements*/
+                margin: 0;
+                padding: 0;
+                font-family: 'Azeret Mono', monospace;
+                font-size: 25px;
+                box-sizing: border-box;
+            }
+            
+            body {
+                background: url(../img/Mauve.jpg);
+                background-size: 100% 100%;
+            }
+            /*WEBKIT ESTILIZAÇÃO PARA SCROLLBAR DO CARROSCEL COM CSS*/
+            
+             ::-webkit-scrollbar {
+                width: 11px;
+            }
+            
+             ::-webkit-scrollbar-thumb {
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.3);
+                -webkit-box-shadow: inset 0 0 6px rgba(100, 11, 184, 0.7);
+            }
+            
+            .avatar {
+                width: 225px;
+                height: 225px;
+                border: 2px solid #59abc6;
+                border-radius: 15px;
+                background-image: url(../img/avatar.png);
+                background-size: 100% 100%;
+            }
+            
+            .redes {
+                width: 95%;
+                height: 100px;
+                background-color: black;
+                border-radius: 15px;
+                display: inline-flex;
+                justify-content: space-around;
+                align-items: center;
+                border: 2px solid #59abc6;
+            }
+            
+            .full {
+                margin: 50px 0px 10px 0px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .container {
+                transition: 1.3s;
+                padding-top: 20px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding-bottom: 50px;
+                max-width: 650px;
+                width: 95%;
+                height: 100%;
+                background: url(../img/backcontainer.png);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                border-radius: 15px;
+                border: 2px solid rgb(161, 50, 184);
+            }
+            
+            h1,
+            h2,
+            p {
+                display: flex;
+                text-align: center;
+                border: 2px solid #59abc6;
+                border-radius: 15px;
+                padding: 10px;
+                cursor: default;
+                margin: 15px 15px 15px 15px;
+                font-weight: bold;
+                align-items: center;
+                /*WEB KIT PARA DEIXAR CONTEÚDO NAO CELECIONAVEL*/
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            
+            .container:hover {
+                transition: 0.3s;
+                border: 2px solid #59abc6;
+            }
+            
+            .redes:hover {
+                transition: 0.3s;
+                border: 2px solid rgb(161, 50, 184);
+                color: #59abc6;
+                background-color: black;
+            }
+            
+            h1:hover,
+            h2:hover,
+            p:hover,
+            .avatar:hover,
+            .items:hover {
+                transition: 0.3s;
+                border: 2px solid rgb(161, 50, 184);
+                color: #59abc6;
+                background-color: black;
+                opacity: 85%;
+            }
+            
+            .avatar:hover {
+                opacity: 50%;
+            }
+            
+            p {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            
+            .carrocel {
+                margin-top: 15px;
+                width: 95%;
+            }
+            
+            .carrocel:-webkit-scrollbar {
+                width: 12px;
+            }
+            
+            .items {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                border-radius: 15px;
+                border: 2px solid #59abc6;
+            }
+            
+            .item {
+                flex: none;
+                width: 100%;
+                margin-right: 5px;
+                scroll-snap-align: start;
+            }
+            
+            #pai {
+                border: 2px solid #5a34c0;
+                border-radius: 15px;
+                display: flex;
+                overflow: hidden;
+                margin-top: 15px;
+                height: 600px;
+                width: 100%;
+                background: url(../img/Mauve.jpg);
+                position: relative;
+                align-items: flex-start;
+            }
+            
+            .filha {
+                display: flex;
+                width: 50%;
+                height: 300px;
+            }
+            
+            .hfilha,
+            .docP,
+            .docPsec,
+            .h1b {
+                transition: 0.3s;
+                border: 2px solid rgb(161, 50, 184);
+                color: #59abc6;
+                background-color: black;
+                opacity: 85%;
+            }
+            
+            .hfilha:hover,
+            .docP:hover {
+                color: black;
+                background-color: transparent;
+                border: 2px solid #59abc6;
+            }
+            
+            #filho {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                height: 311px;
+                background-color: rgb(24, 180, 180);
+                position: absolute;
+                border: 2px solid #5a34c0;
+                border-radius: 15px;
+                box-shadow: 3px 3px rgba(43, 76, 138, 0.5);
+            }
+            /*AULA DE ANIMAÇÃO*/
+            
+            #filho.animar {
+                background: #59abc6;
+                /* Propriedade que linka pelo nome do @keyframes*/
+                animation-name: click;
+                /* Propriedade que define o tempo de duração da animação*/
+                animation-duration: 1s;
+                /* Propriedade e valor (forwards) que permite deixar o elemento no estado final da animação*/
+                animation-fill-mode: forwards;
+                animation-timing-function: linear;
+                animation-delay: 0.3s;
+            }
+            
+            @keyframes click {
+                /*A animação vai do 0 ao 1 em estado e volta para posição inicial*/
+                0% {
+                    top: 50%;
+                    background-color: #5a34c0;
+                }
+                80% {
+                    left: 50%;
+                    background-color: #5a34c0;
+                }
+                85% {
+                    top: 50%;
+                }
+                100% {
+                    left: 50%;
+                    top: 0%;
+                    background-color: rgb(161, 50, 184);
+                }
+            }
+            
+            #doc {
+                margin-right: 10px;
+                margin: 0 auto;
+                flex-wrap: wrap;
+                display: flex;
+                width: 95%;
+                max-width: 650px;
+                height: 100%;
+                background: url(../img/Mauve.jpg);
+                justify-content: center;
+                padding-top: 10px;
+                margin-bottom: 30px;
+                border-radius: 15px;
+                border: 2px solid rgb(161, 50, 184);
+            }
+            
+            #doc:hover {
+                transition: 0.4s;
+                border-color: #59abc6;
+            }
+            
+            #doc>div {
+                width: 80%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            
+            #doc>div>button {
+                margin: 25px 0px 25px 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 200px;
+                height: 200px;
+                border-radius: 15px;
+                border: none;
+                border: 2px solid #5a34c0;
+                background-color: #59abc6;
+            }
+            
+            #doc>div>button:hover {
+                border-color: #59abc6;
+                background-color: #5a34c0;
+            }
+            
+            #doc>div>button:active {
+                transition: 0.1s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 195px;
+                height: 195px;
+                border-color: #59abc6;
+                background-color: #5a34c0;
+            }
+            
+            #doc>button.p {
+                width: 100%;
+            }
+            /*CSS e JavaScript em form de login*/
+            
+            form {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            #text {
+                margin-top: 10px;
+                width: 90%;
+                border-radius: 5px;
+                border: 1px solid #59abc6;
+            }
+            
+            #password {
+                width: 90%;
+                border-radius: 5px;
+                border: 1px solid #59abc6;
+                margin-top: 50px;
+            }
+            
+            .form>form>button {
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+            
+            #text:focus,
+            #password:focus {
+                outline: none;
+            }
