@@ -128,12 +128,13 @@
             
             img {
                 width: 100%;
-                height: 100%;
+                height: 98.3%;
             }
             
             .carrocel {
                 margin-top: 15px;
                 width: 100%;
+                height: auto;
                 overflow: hidden;
             }
             
@@ -264,7 +265,7 @@
                 width: 80%;
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: space-between;
+                justify-content: center;
             }
             
             #doc>div>button {
@@ -325,9 +326,17 @@
             .form>form>button {
                 margin-top: 50px;
                 margin-bottom: 50px;
+                border-radius: 10px;
+                border: 2px solid;
             }
             
             #text:focus,
             #password:focus {
                 outline: none;
+            }
+            
+            @media screen and (max-width: 1680px) {
+                #doc>div {
+                    justify-content: space-around;
+                }
             }
